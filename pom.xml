@@ -11,6 +11,7 @@
     <modules>
         <module>hmtask1_maven_project</module>
         <module>hometask2_webdriver_factory</module>
+        <module>hometask3_ya_market_test</module>
     </modules>
 
 
