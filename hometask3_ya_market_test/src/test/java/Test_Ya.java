@@ -60,8 +60,8 @@ public class Test_Ya {
         wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector(".preloadable__preloader_visibility_visible")));
         addPhoneToCompare();
         Assert.assertEquals(String.format("Товар " + titleOfPhone + " добавлен к сравнению"), popupText);
-       // Assert.assertEquals(String.format("Всего в списке 2 товара из категории Мобильные телефоны"), popupTextTwoDevices);
-        //driver.findElement(By.linkText("Сравнить")).click();
+        Assert.assertEquals(String.format("Всего в списке 2 товара из категории Мобильные телефоны"), popupTextTwoDevices);
+        driver.findElement(By.linkText("Сравнить")).click();
 
     }
 
@@ -110,6 +110,7 @@ public class Test_Ya {
     }
 
     public void sortOfphones() {
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector(".preloadable__preloader_visibility_visible")));
         driver.findElement(By.xpath("//span[contains(text(),'Xiaomi')]")).click();
         driver.findElement(By.xpath("//span[contains(text(),'HUAWEI')]")).click();
         driver.findElement(By.cssSelector("fieldset[data-autotest-id='16816262'] > ul > li:last-child > div > label")).click();
@@ -121,22 +122,13 @@ public class Test_Ya {
         wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector(".preloadable__preloader_visibility_visible")));
         titleOfPhone = driver.findElement(By.cssSelector(":nth-child(1) > .n-snippet-cell2__header a")).getAttribute("title");
         driver.findElement(By.xpath("//div[contains(@class, 'n-product-toolbar__item')]")).click();
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".popup-informer__details")));
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".popup-informer__title")));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".popup-informer__details")));
+
         popupText = driver.findElement(By.cssSelector(".popup-informer__title")).getText();
         popupTextTwoDevices = driver.findElement(By.cssSelector(".popup-informer__details")).getText();
         logger.info("Select of the smartphone, adding to compare ");
 
-    }
-    public void addPhoneToCompare1(){
-        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector(".preloadable__preloader_visibility_visible")));
-        titleOfPhone = driver.findElement(By.cssSelector(":nth-child(1) > .n-snippet-cell2__header a")).getAttribute("title");
-        driver.findElement(By.xpath("//div[contains(@class, 'n-product-toolbar__item')]")).click();
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".popup-informer__details")));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".popup-informer__title")));
-        popupText = driver.findElement(By.cssSelector(".popup-informer__title")).getText();
-        popupTextTwoDevices = driver.findElement(By.cssSelector(".popup-informer__details")).getText();
-        logger.info("Select of the smartphone, adding to compare ");
     }
 
     @After
