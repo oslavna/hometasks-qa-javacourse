@@ -10,6 +10,13 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>hometask5_otus_pageobj</artifactId>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <login>olga_slavnova@list.ru</login>
+        <password>otuspass</password>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
@@ -106,6 +113,22 @@
                 <configuration>
                     <source>1.8</source>
                     <target>1.8</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.0.0-M4</version>
+                <configuration>
+                    <includes>
+                        <include>OtusTest.java</include>
+                    </includes>
+
+                    <systemPropertyVariables>
+                        <login>${login}</login>
+                        <password>${password}</password>
+                    </systemPropertyVariables>
+
                 </configuration>
             </plugin>
         </plugins>
