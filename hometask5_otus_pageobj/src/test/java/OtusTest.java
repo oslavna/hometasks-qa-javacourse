@@ -1,23 +1,11 @@
-import io.github.bonigarcia.wdm.WebDriverManager;
-import org.hamcrest.core.StringContains;
-import org.junit.*;
 import org.junit.rules.ErrorCollector;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.mustache.Value;
 import pages.LoginPage;
-
-import java.util.List;
-import java.util.concurrent.TimeUnit;
 import org.junit.Test;
 import pages.*;
-import static org.hamcrest.CoreMatchers.is;
-import static org.hamcrest.MatcherAssert.assertThat;
+
+import org.hamcrest.core.StringContains;
+import org.junit.*;
 
 //- Открыть https://otus.ru
 //        - Авторизоваться на сайте
