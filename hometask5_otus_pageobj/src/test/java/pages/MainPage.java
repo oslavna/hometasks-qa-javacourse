@@ -5,7 +5,6 @@ import org.openqa.selenium.WebDriver;
 
 public class MainPage extends AbstractPage {
     protected String mainPageUrl = "https://otus.ru/";
-    protected String personPageUrl = "https://otus.ru/learning/";
     public MainPage(WebDriver driver) {
         super(driver);
     }

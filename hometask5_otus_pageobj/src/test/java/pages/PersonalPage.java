@@ -7,8 +7,8 @@ import org.openqa.selenium.WebElement;
 
 public class PersonalPage extends AbstractPage {
 
-    public String getValueTextField(WebElement webElement){
-        return webElement.getAttribute("value");
+    public String getText(WebElement w){
+        return w.getAttribute("value");
     }
 
     public PersonalPage(WebDriver driver) {
@@ -17,10 +17,8 @@ public class PersonalPage extends AbstractPage {
 
 
     public PersonalPage tabAboutMeOpen(){
-
         driver.get("https://otus.ru/lk/biography/personal/");
         return this;
-
     }
 
     public PersonalPage enterName(String name){
@@ -42,8 +40,8 @@ public class PersonalPage extends AbstractPage {
     }
 
     public PersonalPage enterLatinSurname(String name){
-        driver.findElement(By.cssSelector("[name='lname']")).clear();
-        driver.findElement(By.cssSelector("[name='lname']")).sendKeys(name);
+        driver.findElement(By.cssSelector("[name='lname_latin']")).clear();
+        driver.findElement(By.cssSelector("[name='lname_latin']")).sendKeys(name);
         return this;
     }
 
@@ -58,62 +56,70 @@ public class PersonalPage extends AbstractPage {
         return this;
     }
     public PersonalPage selectCountry(String country){
-        String selectCountryRussia = "document.querySelector(\"[name='country']\").click(); " +
-                "+ document.querySelector(\"[title=" + country+"]\").click();";
+        String selectCountryRussia = "document.querySelector(\"[name='country']\").click(); " + "+ document.querySelector(\"[title=" + country+"]\").click();";
         ((JavascriptExecutor)driver).executeScript(selectCountryRussia);
         return this;
     }
 
-    public PersonalPage selectCityMoscow() throws InterruptedException {
+    public PersonalPage selectCity(String city) throws InterruptedException {
         Thread.sleep(500);
-        String selectCityMoscow = "document.querySelector(\"[name='city']\").click(); " +
-                "+ document.querySelector(\"[title='Москва']\").click();";
+        String selectCityMoscow = "document.querySelector(\"[name='city']\").click(); " + "+ document.querySelector(\"[title="+ city +"]\").click();";
         ((JavascriptExecutor)driver).executeScript(selectCityMoscow);
         return this;
     }
-    public PersonalPage selectRemoteWork() {
+    public PersonalPage selectRemote() {
         String script = "document.querySelector(\"[value='remote']\").click();";
         ((JavascriptExecutor)driver).executeScript(script);
         return this;
     }
 
-    public PersonalPage openFirstCommunicationTypeList() {
+    public PersonalPage openFirstContact() {
         String script = "document.querySelector(\"[name='contact-0-service']\").click();";
         ((JavascriptExecutor)driver).executeScript(script);
         return this;
     }
-    public PersonalPage selectCommunicationTypeFacebook() {
-        driver.findElement(By.cssSelector("[title='Facebook']")).click();
+
+    public PersonalPage selectContactVk() {
+        driver.findElement(By.cssSelector("[title='VK']")).click();
         return this;
     }
 
-    public PersonalPage enterValueForFirstCommunicationType(String value) {
-        driver.findElement(By.cssSelector("[name='contact-1-value']")).clear();
-        driver.findElement(By.cssSelector("[name='contact-1-value']")).sendKeys(value);
-        return this;
-    }
-    public PersonalPage addSecondCommunicationType() {
-        driver.findElement(By.cssSelector("[name='contact-1-service']")).click();
-        return this;
-    }
 
-    public PersonalPage openSecondCommunicationTypeList() {
+    public PersonalPage enterVkID(String url) {
+        driver.findElement(By.cssSelector("[name='contact-0-value']")).clear();
+        driver.findElement(By.cssSelector("[name='contact-0-value']")).sendKeys(url);
+        return this;
+    }
+    public PersonalPage openSecondContact() {
+        driver.findElement(By.cssSelector(".js-formset > button")).click();
         String script = "document.querySelector(\"[name='contact-1-service']\").click();";
         ((JavascriptExecutor)driver).executeScript(script);
         return this;
     }
 
-    public PersonalPage selectCommunicationTypeTelegram() {
-        driver.findElement(By.cssSelector(":nth-child(3) > .container__col_ssm-12 button[title='Тelegram']")).click();
+    public PersonalPage selectContactSkype() {
+        driver.findElement(By.cssSelector(":nth-child(3) > .container__col_ssm-12 button[title='Skype']")).click();
         return this;
     }
 
-    public PersonalPage enterValueForSecondCommunicationType(String value) {
+    public PersonalPage enterSkypeName(String value) {
         driver.findElement(By.cssSelector("[name='contact-1-value']")).clear();
         driver.findElement(By.cssSelector("[name='contact-1-value']")).sendKeys(value);
         return this;
     }
-    public PersonalPage saveChangesOnTheProfilePage(){
+    public PersonalPage selectMaleOrFemale() {
+        driver.findElement(By.cssSelector("[id='id_gender']")).click();
+        driver.findElement(By.cssSelector("[value='f']")).click();
+        return this;
+    }
+
+    public PersonalPage enterCompany(String company) {
+        driver.findElement(By.cssSelector("[name='company']")).clear();
+        driver.findElement(By.cssSelector("[name='company']")).sendKeys(company);
+        return this;
+    }
+
+    public PersonalPage save(){
         driver.findElement(By.cssSelector("[class*='button_gray']")).click();
         return this;
     }

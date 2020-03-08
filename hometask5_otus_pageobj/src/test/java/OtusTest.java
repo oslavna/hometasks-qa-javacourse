@@ -40,7 +40,6 @@ public class OtusTest extends BaseHooks {
     @Test
     public void otusPageObjectTest() throws Exception {
 
-
         LoginPage loginPage = new LoginPage(driver);
         MainPage mainPage = new MainPage(driver);
         PersonalPage personalPage = new PersonalPage(driver);
@@ -49,16 +48,6 @@ public class OtusTest extends BaseHooks {
         loginPage.login(login,password);
         mainPage.openPersonalPage();
         personalPage.tabAboutMeOpen();
-
-
-//        WebElement elementInField = driver.findElement(By.cssSelector(".container__col container__col_6 container__col_iphone-vp container__col_iphone-12"));
-//        System.out.println("test" + elementInField.getText());
-//        List<WebElement> elementsInFields = driver.findElements(By.cssSelector(".container__col container__col_6 container__col_iphone-vp container__col_iphone-12"));
-//        for (WebElement element : elementsInFields) {
-//            String textOfElement = element.getText();
-//            System.out.println("test" + textOfElement);
-//        }
-
         personalPage.enterName("Ольга");
         personalPage.enterSurname("Славнова");
         personalPage.enterLatinName("Olga");
@@ -66,11 +55,17 @@ public class OtusTest extends BaseHooks {
         personalPage.enterBlogName("Оля");
         personalPage.enterDateOfBirth("12.08.1995");
         personalPage.selectCountry("Россия");
-        personalPage.selectCityMoscow();
-        personalPage.selectRemoteWork();
-        personalPage.openFirstCommunicationTypeList();
-        personalPage.selectCommunicationTypeFacebook();
-        personalPage.saveChangesOnTheProfilePage();
+        personalPage.selectCity("Москва");
+        personalPage.selectRemote();
+        personalPage.openFirstContact();
+        personalPage.selectContactVk();
+        personalPage.enterVkID("os_slavnova");
+        personalPage.openSecondContact();
+        personalPage.selectContactSkype();
+        personalPage.enterSkypeName("live:olga.slavnova");
+        personalPage.selectMaleOrFemale();
+        personalPage.enterCompany("Kaspersky Lab");
+        personalPage.save();
 
         driver.quit();
         BaseHooks.setup();
@@ -85,13 +80,26 @@ public class OtusTest extends BaseHooks {
         newPersonalPage.tabAboutMeOpen();
 
 
-
-        //newPersonalPage.getValueTextField(driver.findElements(By.cssSelector("")
-        errorCollector.checkThat("Имя не соответствует",
-                newPersonalPage.getValueTextField(driver.findElement(By.cssSelector("[name='fname']"))), new StringContains("Ольга"));
-
-
-//
+        errorCollector.checkThat("Name",
+                newPersonalPage.getText(driver.findElement(By.cssSelector("[name='fname']"))), new StringContains("Ольга"));
+        errorCollector.checkThat("Latin name",
+                newPersonalPage.getText(driver.findElement(By.cssSelector("[name='fname_latin']"))), new StringContains("Olga"));
+        errorCollector.checkThat("Surname",
+                newPersonalPage.getText(driver.findElement(By.cssSelector("[name='lname']"))), new StringContains("Славнова"));
+        errorCollector.checkThat("Latin surname",
+                newPersonalPage.getText(driver.findElement(By.cssSelector("[name='lname_latin']"))), new StringContains("Slavnova"));
+        errorCollector.checkThat("Blog name",
+                newPersonalPage.getText(driver.findElement(By.cssSelector("[name='blog_name']"))), new StringContains("Оля"));
+        errorCollector.checkThat("Date of birth",
+                newPersonalPage.getText(driver.findElement(By.cssSelector("[name='date_of_birth']"))), new StringContains("12.08.1995"));
+        errorCollector.checkThat("vk",
+                newPersonalPage.getText(driver.findElement(By.cssSelector("[name='contact-1-value']"))), new StringContains("os_slavnova"));
+        errorCollector.checkThat("Skype",
+                newPersonalPage.getText(driver.findElement(By.cssSelector("[name='contact-0-value']"))), new StringContains("live:olga.slavnova"));
+        errorCollector.checkThat("Gender",
+                newPersonalPage.getText(driver.findElement(By.cssSelector("[id='id_gender']"))), new StringContains("f"));
+        errorCollector.checkThat("Company",
+                newPersonalPage.getText(driver.findElement(By.cssSelector("[name='company']"))), new StringContains("Kaspersky Lab"));
 
 
     }
