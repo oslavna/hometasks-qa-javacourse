@@ -87,43 +87,12 @@ public class OtusTest extends BaseHooks {
 
 
         //newPersonalPage.getValueTextField(driver.findElements(By.cssSelector("")
-        errorCollector.checkThat("Имя не соответствует ожидаемому",
+        errorCollector.checkThat("Имя не соответствует",
                 newPersonalPage.getValueTextField(driver.findElement(By.cssSelector("[name='fname']"))), new StringContains("Ольга"));
 
 
 //
-//        errorCollector.checkThat("Имя на латинице не соответствует ожидаемому",
-//                personalPage.getValueTextField(profilePage.getLatinFirstName()), new StringContains("Sergeiy"));
-//        errorCollector.personalPage("Фамилия не соответствует ожидаемой",
-//                profilePage.getValueTextField(profilePage.getLocalSecondName()), new StringContains("Шитов"));
-//        errorCollector.checkThat("Фамилия на латинице не соответствует ожидаемой",
-//                profilePage.getValueTextField(profilePage.getLatinSecondName()), new StringContains("Shitov"));
-//        errorCollector.checkThat("Имя в блоге не соответствует ожидаемому",
-//                profilePage.getValueTextField(profilePage.getBlogName()), new StringContains("ssergeiy"));
-//        errorCollector.checkThat("Дата рождения не соответствует ожидаемой",
-//                profilePage.getValueTextField(profilePage.getDateOfBirth()), new StringContains("16.08.1991"));
-//        errorCollector.checkThat("Страна не соответствует ожидаемой",
-//                profilePage.getInnerTextTextField(profilePage.getCountry()), new StringContains("Россия"));
-//        errorCollector.checkThat("Город не соответствует ожидаемому",
-//                profilePage.getInnerTextTextField(profilePage.getCity()), new StringContains("Москва"));
-//        errorCollector.checkThat("Значение \"Удаленная работа\" не проставлено",
-//                profilePage.getValueCheckField(profilePage.getRemoteWork()), new StringContains("true"));
-//        errorCollector.checkThat("Первый вид связи не facebook",
-//                profilePage.getValueTextField(profilePage.getFirstCommunicationTypeSelector()), new StringContains("facebook"));
-//        errorCollector.checkThat("Значение в поле для вида связи skype - не соответсвует ожидаемому",
-//                profilePage.getValueTextField(profilePage.getEnterValueForFirstCommunicationType()), new StringContains("sashitov"));
-//        errorCollector.checkThat("Второй вид связи не telegram",
-//                profilePage.getValueTextField(profilePage.getSecondCommunicationTypeSelector()), new StringContains("telegram"));
-//        errorCollector.checkThat("Значение в поле для вида связи vk - не соответсвует ожидаемому",
-//                profilePage.getValueTextField(profilePage.getEnterValueForSecondCommunicationType()), new StringContains("https://vk.com/feed"));
-//        errorCollector.checkThat("Значение \"Предпочтительный вид связи\" не проставлено",
-//                profilePage.getValueCheckField(profilePage.getPreferredSecondCommunicationType()), new StringContains("true"));
-//        errorCollector.checkThat("Пол не соответствует ожидаемому",
-//                profilePage.getValueTextField(profilePage.getGender()), new StringContains("m"));
-//        errorCollector.checkThat("Компания не соответствует ожидаемой",
-//                profilePage.getValueTextField(profilePage.getCompany()), new StringContains("OtusHomeWork"));
-//        errorCollector.checkThat("Должность не соответствует ожидаемой",
-//                profilePage.getValueTextField(profilePage.getPosition()), new StringContains("Student"));
+
 
     }
 }
