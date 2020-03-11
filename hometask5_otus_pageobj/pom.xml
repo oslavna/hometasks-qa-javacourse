@@ -13,8 +13,8 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <login>olga_slavnova@list.ru</login>
-        <password>otuspass</password>
+        <login></login>
+        <password></password>
 
     </properties>
 

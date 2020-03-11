@@ -12,9 +12,6 @@ import java.util.concurrent.TimeUnit;
 
 public class BaseHooks {
     protected static WebDriver driver;
-    protected static WebDriverWait wait;
-    protected static Actions action;
-
 
     public static WebDriver getDriver() {
         return driver;
