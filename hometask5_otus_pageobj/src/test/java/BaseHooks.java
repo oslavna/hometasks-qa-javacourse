@@ -4,11 +4,21 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.concurrent.TimeUnit;
 
 public class BaseHooks {
     protected static WebDriver driver;
+    protected static WebDriverWait wait;
+    protected static Actions action;
+
+
+    public static WebDriver getDriver() {
+        return driver;
+    }
 
     @BeforeClass
     public static void setup() {
