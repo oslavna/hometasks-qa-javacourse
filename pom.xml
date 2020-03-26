@@ -14,6 +14,7 @@
         <module>hometask3_ya_market_test</module>
         <module>hometask4_web_crawler</module>
         <module>hometask5_otus_pageobj</module>
+        <module>hometask6_habr_tests</module>
     </modules>
 
 

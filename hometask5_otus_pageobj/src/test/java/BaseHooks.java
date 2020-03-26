@@ -8,6 +8,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
 public class BaseHooks {
@@ -39,5 +40,6 @@ public class BaseHooks {
     public void cleanUp() {
         driver.manage().deleteAllCookies();
     }
+
 
 }
