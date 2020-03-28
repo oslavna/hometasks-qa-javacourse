@@ -1,5 +1,6 @@
-package helpers;
+package helpers.pages;
 
+import helpers.ChromeWebDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -8,7 +9,7 @@ import java.util.List;
 
 public class MainPage {
 
-    protected String audioBookUrl = "https://www.mann-ivanov-ferber.ru/books/allbooks/?booktype=audiobook";
+    public static String mainPageUrl = "https://www.mann-ivanov-ferber.ru/";
 
     protected By booksInList = By.cssSelector(".c-continuous-list .lego-book");
 
@@ -22,10 +23,13 @@ public class MainPage {
         return pageLoader;
     }
 
+    public static String getMainPageUrl(){
+        return mainPageUrl;
+    }
 
     public void openAudioBookPage() {
 
-        ChromeWebDriver.getDriver().get(audioBookUrl);
+        ChromeWebDriver.getDriver().get(AudioBookPage.audioBookUrl);
 
     }
 

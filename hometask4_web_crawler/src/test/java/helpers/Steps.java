@@ -1,5 +1,7 @@
 package helpers;
 
+import helpers.pages.AudioBookPage;
+import helpers.pages.MainPage;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebElement;
@@ -37,16 +39,16 @@ public class Steps {
 
     public ArrayList<String> getBookInfo(String url) {
 
-        BookPage bookPage = PageFactory.initElements(ChromeWebDriver.getDriver(), BookPage.class);
+        AudioBookPage audioBookPage = PageFactory.initElements(ChromeWebDriver.getDriver(), AudioBookPage.class);
         ArrayList<String> lineBook = new ArrayList<>();
         ChromeWebDriver.getDriver().get(url);
-        String bookLink = bookPage.getPageUrl();
-        String bookName = bookPage.getBookName();
-        String bookAuthor = bookPage.getBookAuthor();
-        String paperBookPrice = bookPage.getPaperBookPrice();
-        String eBookPrice = bookPage.getElectroBookPrice();
-        String audioBookPrice = bookPage.getAudioBookPrice();
-        String introLink = bookPage.getIntroContentLink();
+        String bookLink = audioBookPage.getPageUrl();
+        String bookName = audioBookPage.getBookName();
+        String bookAuthor = audioBookPage.getBookAuthor();
+        String paperBookPrice = audioBookPage.getPaperBookPrice();
+        String eBookPrice = audioBookPage.getElectroBookPrice();
+        String audioBookPrice = audioBookPage.getAudioBookPrice();
+        String introLink = audioBookPage.getIntroContentLink();
         lineBook.add("\"" + bookLink + "\"" + "; " + "\"" + bookName + "\"" + "; " + "\"" + bookAuthor + "\"" + "; " + "\"" + paperBookPrice + "; " + "\"" + eBookPrice + "; " + "\"" + audioBookPrice + "\"" + "; " + "\"" + introLink + "\"" + "; ");
         return lineBook;
     }

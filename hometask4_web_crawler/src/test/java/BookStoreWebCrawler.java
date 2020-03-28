@@ -1,6 +1,6 @@
 import helpers.ChromeWebDriver;
 import helpers.MyFileWriter;
-import helpers.MainPage;
+import helpers.pages.MainPage;
 import helpers.Steps;
 import java.io.IOException;
 import java.util.ArrayList;

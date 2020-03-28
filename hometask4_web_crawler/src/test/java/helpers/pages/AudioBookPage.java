@@ -1,12 +1,13 @@
-package helpers;
+package helpers.pages;
 
+import helpers.ChromeWebDriver;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import static helpers.MyFileWriter.logger;
+public class AudioBookPage {
 
-public class BookPage {
+    public static String audioBookUrl = MainPage.getMainPageUrl() + "books/allbooks/?booktype=audiobook";
 
     @FindBy(xpath = "//h1[@class='header active p-sky-title']//span")
     protected WebElement bookName;
@@ -28,6 +29,10 @@ public class BookPage {
 
     @FindBy(xpath = "//div[@class='nkk-other position-top']//a[@class='nkk-file-download__link']")
     protected WebElement introContentLinkReserve;
+
+    public String getAudioBookUrl() {
+        return audioBookUrl;
+    }
 
     public String getPageUrl() {
         return ChromeWebDriver.getDriver().getCurrentUrl();
