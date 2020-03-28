@@ -13,9 +13,14 @@ public class BaseHooks {
 
     protected static WebDriver driver;
     protected static String browser = System.getProperty("browser").toUpperCase();
+    public static String baseUrl = "https://habr.com/ru/";
 
     public static WebDriver getDriver() {
         return driver;
+    }
+
+    public static String getBaseUrl(){
+        return baseUrl;
     }
 
     public static void refreshPage() {
@@ -40,11 +45,10 @@ public class BaseHooks {
 
     @BeforeClass
     public static void setup() {
-        //WebDriverManager.chromedriver().setup();
         driver = WebDriverFactory.createNewDriver(DriverName.valueOf(browser));
 
         if (driver != null) {
-            driver.manage().timeouts().implicitlyWait(18, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(8, TimeUnit.SECONDS);
             driver.manage().window().maximize();
         }
 
@@ -65,10 +69,14 @@ public class BaseHooks {
     }
 
     @After
-    public void cleanUp() {
+    public void closeTab() {
         if (getAllTabs().size() > 1) {            //social networks are opening in new tabs. It affects next tests
             driver.close();
         }
+    }
+
+    public void cleanUp() {
+        driver.manage().deleteAllCookies();
     }
 }
 

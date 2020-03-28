@@ -6,7 +6,7 @@ import helpers.BaseHooks;
 
 public class HubPage {
 
-    String pageUrl = "https://habr.com/ru/hubs/";
+    String pageUrl = BaseHooks.getBaseUrl() + "hubs/";
     BaseHooks baseHooks = new BaseHooks();
 
     public HubPage() {

@@ -6,7 +6,7 @@ import helpers.BaseHooks;
 
 public class TopPage {
 
-    String pageUrl = "https://habr.com/ru/top/";
+    String pageUrl = BaseHooks.getBaseUrl() + "top/";
     BaseHooks baseHooks = new BaseHooks();
 
     public TopPage() {

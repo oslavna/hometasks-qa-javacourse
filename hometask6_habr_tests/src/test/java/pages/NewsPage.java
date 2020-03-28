@@ -7,7 +7,7 @@ import helpers.BaseHooks;
 
 public class NewsPage {
 
-    String newsPageUrl = "https://habr.com/ru/news/";
+    String pageUrl = BaseHooks.getBaseUrl() + "news/";
     BaseHooks baseHooks = new BaseHooks();
 
     public NewsPage() {
@@ -22,7 +22,7 @@ public class NewsPage {
     }
 
     public String getPageUrl() {
-        return newsPageUrl;
+        return pageUrl;
     }
 
     public boolean firstPostIsPresent() {

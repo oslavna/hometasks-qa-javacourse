@@ -7,7 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public class AuthorsPage {
 
-    String pageUrl = "https://habr.com/ru/users/";
+    String pageUrl = BaseHooks.getBaseUrl() + "users/";
     BaseHooks baseHooks = new BaseHooks();
 
     public AuthorsPage() {

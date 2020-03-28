@@ -7,7 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public class CompaniesPage {
 
-    String pageUrl = "https://habr.com/ru/companies/";
+    String pageUrl = BaseHooks.getBaseUrl() + "companies/";
     BaseHooks baseHooks = new BaseHooks();
 
     public CompaniesPage() {

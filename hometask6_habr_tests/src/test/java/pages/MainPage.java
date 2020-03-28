@@ -1,5 +1,7 @@
 package pages;
 import helpers.WebDriverFactory;
+import org.jsoup.Connection;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -8,8 +10,8 @@ import helpers.BaseHooks;
 
 public class MainPage {
 
-    String mainPageUrl = "https://habr.com/ru/";
     BaseHooks baseHooks = new BaseHooks();
+    String mainPageUrl = BaseHooks.getBaseUrl();
 
     public MainPage(){
         PageFactory.initElements(baseHooks.getDriver(), this);
@@ -109,7 +111,7 @@ public class MainPage {
         return companiesButton;
     }
 
-    public WebElement getNewsButton(){
+    public WebElement getNewsButton() {
         return newsButton;
     }
 
@@ -179,8 +181,14 @@ public class MainPage {
     }
 
 
-    public void openNewsPage(){
-        getNewsButton().click();
+    public void openNewsPage() {
+        try {
+            getNewsButton().click();
+        } catch (NoSuchElementException e) {
+            baseHooks.cleanUp();
+            openHubrMainPage();
+            getNewsButton().click();
+        }
     }
 
     public void openHubsPage(){
