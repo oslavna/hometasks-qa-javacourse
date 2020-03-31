@@ -1,6 +1,5 @@
 package helpers.pages;
 
-import helpers.ChromeWebDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -25,12 +24,6 @@ public class MainPage {
 
     public static String getMainPageUrl(){
         return mainPageUrl;
-    }
-
-    public void openAudioBookPage() {
-
-        ChromeWebDriver.getDriver().get(AudioBookPage.audioBookUrl);
-
     }
 
     public List<WebElement> getBookList(){

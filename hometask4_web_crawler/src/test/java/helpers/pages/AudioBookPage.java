@@ -1,6 +1,6 @@
 package helpers.pages;
 
-import helpers.ChromeWebDriver;
+import helpers.DriverManager;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -35,7 +35,7 @@ public class AudioBookPage {
     }
 
     public String getPageUrl() {
-        return ChromeWebDriver.getDriver().getCurrentUrl();
+        return DriverManager.getDriver().getCurrentUrl();
     }
 
     public String getBookName() {

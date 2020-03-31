@@ -24,6 +24,7 @@ public class MyFileWriter {
         writer = new java.io.FileWriter(file, true);
             for (String s : array) {
                 writer.write(s + "\n");
+
             }
                 writer.close();
 
