@@ -4,13 +4,12 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import helpers.BaseHooks;
 
-public class HubPage {
+public class HubPage extends BasePage {
 
-    String pageUrl = BaseHooks.getBaseUrl() + "hubs/";
-    BaseHooks baseHooks = new BaseHooks();
+    String pageUrl = baseUrl + "hubs/";
 
     public HubPage() {
-        PageFactory.initElements(baseHooks.getDriver(), this);
+        PageFactory.initElements(BaseHooks.getDriver(), this);
     }
 
     @FindBy(xpath = "//a[@class='list-snippet__title-link']")

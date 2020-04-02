@@ -79,14 +79,3 @@ public class BaseHooks {
         driver.manage().deleteAllCookies();
     }
 }
-
-
-
-
-
-
-
-
-
-
-

@@ -5,13 +5,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class AuthorsPage {
+public class AuthorsPage extends BasePage{
 
-    String pageUrl = BaseHooks.getBaseUrl() + "users/";
-    BaseHooks baseHooks = new BaseHooks();
+    String pageUrl = baseUrl + "users/";
 
     public AuthorsPage() {
-        PageFactory.initElements(baseHooks.getDriver(), this);
+        PageFactory.initElements(BaseHooks.getDriver(), this);
     }
 
     @FindBy(xpath = "//a[@class='list-snippet__fullname']")

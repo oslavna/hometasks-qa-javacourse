@@ -1,17 +1,17 @@
 package pages;
 
 import helpers.BaseHooks;
+import org.jsoup.Connection;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class CompaniesPage {
+public class CompaniesPage extends BasePage{
 
-    String pageUrl = BaseHooks.getBaseUrl() + "companies/";
-    BaseHooks baseHooks = new BaseHooks();
+    String pageUrl = baseUrl + "companies/";
 
     public CompaniesPage() {
-        PageFactory.initElements(baseHooks.getDriver(), this);
+        PageFactory.initElements(BaseHooks.getDriver(), this);
     }
 
     @FindBy(xpath = "//a[@class='list-snippet__title-link']")

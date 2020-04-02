@@ -8,17 +8,13 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.JavascriptExecutor;
 import helpers.BaseHooks;
 
-public class MainPage {
-
-    BaseHooks baseHooks = new BaseHooks();
-    String mainPageUrl = BaseHooks.getBaseUrl();
+public class MainPage extends BasePage{
 
     public MainPage(){
-        PageFactory.initElements(baseHooks.getDriver(), this);
+        PageFactory.initElements(BaseHooks.getDriver(), this);
     }
 
     //      elements factory
-
     @FindBy(css = ".stacked-menu [href*='popsci']")
     protected WebElement scienceThreads;
 
@@ -147,7 +143,7 @@ public class MainPage {
     }
 
     public String getHubrMainUrl() {
-        return mainPageUrl;
+        return baseUrl;
     }
 
     //methods

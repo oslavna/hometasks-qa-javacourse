@@ -5,13 +5,12 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import helpers.BaseHooks;
 
-public class NewsPage {
+public class NewsPage extends BasePage{
 
-    String pageUrl = BaseHooks.getBaseUrl() + "news/";
-    BaseHooks baseHooks = new BaseHooks();
+    String pageUrl = baseUrl + "news/";
 
     public NewsPage() {
-        PageFactory.initElements(baseHooks.getDriver(), this);
+        PageFactory.initElements(BaseHooks.getDriver(), this);
     }
 
     @FindBy(xpath = "//a[@class='post__title_link']")
