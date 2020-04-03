@@ -9,10 +9,6 @@ public class NewsPage extends BasePage{
 
     String pageUrl = baseUrl + "news/";
 
-    public NewsPage() {
-        PageFactory.initElements(BaseHooks.getDriver(), this);
-    }
-
     @FindBy(xpath = "//a[@class='post__title_link']")
     protected WebElement upperPost;
 

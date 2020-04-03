@@ -10,9 +10,6 @@ public class CompaniesPage extends BasePage{
 
     String pageUrl = baseUrl + "companies/";
 
-    public CompaniesPage() {
-        PageFactory.initElements(BaseHooks.getDriver(), this);
-    }
 
     @FindBy(xpath = "//a[@class='list-snippet__title-link']")
     protected WebElement companies;

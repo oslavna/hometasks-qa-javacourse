@@ -9,10 +9,6 @@ public class AuthorsPage extends BasePage{
 
     String pageUrl = baseUrl + "users/";
 
-    public AuthorsPage() {
-        PageFactory.initElements(BaseHooks.getDriver(), this);
-    }
-
     @FindBy(xpath = "//a[@class='list-snippet__fullname']")
     protected WebElement user;
 

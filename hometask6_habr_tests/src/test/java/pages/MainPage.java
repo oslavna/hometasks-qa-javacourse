@@ -10,9 +10,6 @@ import helpers.BaseHooks;
 
 public class MainPage extends BasePage{
 
-    public MainPage(){
-        PageFactory.initElements(BaseHooks.getDriver(), this);
-    }
 
     //      elements factory
     @FindBy(css = ".stacked-menu [href*='popsci']")

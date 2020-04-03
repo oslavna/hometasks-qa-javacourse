@@ -8,10 +8,6 @@ public class TopPage extends BasePage {
 
     String pageUrl = baseUrl + "top/";
 
-    public TopPage() {
-        PageFactory.initElements(BaseHooks.getDriver(), this);
-    }
-
     @FindBy(xpath = " //a[@class='post__title_link']")
     protected WebElement upperPublication;
 

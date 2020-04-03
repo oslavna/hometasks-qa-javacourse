@@ -8,9 +8,6 @@ public class HubPage extends BasePage {
 
     String pageUrl = baseUrl + "hubs/";
 
-    public HubPage() {
-        PageFactory.initElements(BaseHooks.getDriver(), this);
-    }
 
     @FindBy(xpath = "//a[@class='list-snippet__title-link']")
     protected WebElement topics;
