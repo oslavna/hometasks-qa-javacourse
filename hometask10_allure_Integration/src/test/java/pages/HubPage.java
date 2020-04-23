@@ -1,0 +1,25 @@
+package pages;
+
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+
+public class HubPage extends BasePage {
+
+    String pageUrl = baseUrl + "hubs/";
+
+
+    @FindBy(xpath = "//a[@class='list-snippet__title-link']")
+    protected WebElement topics;
+
+    public WebElement getTopics() {
+        return topics;
+    }
+
+    public String getPageUrl() {
+        return pageUrl;
+    }
+
+    public boolean topicsIsPresent() {
+        return getTopics().isDisplayed();
+    }
+}
