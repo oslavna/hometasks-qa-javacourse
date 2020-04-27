@@ -7,7 +7,9 @@ import org.springframework.test.annotation.DirtiesContext;
 
 @Configuration
 @ComponentScan("component")
+
 @PropertySource("classpath:config.properties")
+
 @DirtiesContext(methodMode = DirtiesContext.MethodMode.AFTER_METHOD)
 public class ConfigSpring {
 
