@@ -1,11 +1,7 @@
-import org.junit.rules.ErrorCollector;
-import org.openqa.selenium.By;
 import pages.LoginPage;
 import org.junit.Test;
-import pages.*;
-
-import org.hamcrest.core.StringContains;
-import org.junit.*;
+import pages.MainPage;
+import pages.PersonalPage;
 
 //- Открыть https://otus.ru
 //        - Авторизоваться на сайте
