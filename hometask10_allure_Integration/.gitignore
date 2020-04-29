@@ -45,7 +45,10 @@ atlassian-ide-plugin.xml
 # Cursive Clojure plugin
 .idea/replstate.xml
 
-
+.allure
+.idea
+.allure-results
+.target
 
 
 

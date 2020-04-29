@@ -91,3 +91,9 @@ modules.xml
 # Sonarlint plugin
 .idea/sonarlint
 .log
+
+.allure
+.idea
+allure-results
+target
+.iml
