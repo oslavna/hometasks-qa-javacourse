@@ -18,6 +18,7 @@
         <module>hometask8_BDD</module>
         <module>hometask9_selenoidProj</module>
         <module>hometask10_allure_Integration</module>
+        <module>hometask9_selenoidProj_TestNG</module>
     </modules>
 
 
