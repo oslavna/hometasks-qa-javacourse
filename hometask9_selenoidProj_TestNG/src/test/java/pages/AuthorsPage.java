@@ -29,5 +29,6 @@ public class AuthorsPage extends BasePage{
     public boolean usersIsPresent() {
         return getUser().isDisplayed();
     }
+
 }
 

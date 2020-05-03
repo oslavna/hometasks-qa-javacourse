@@ -16,7 +16,6 @@ public class HubPage extends BasePage {
 
     String pageUrl = baseUrl + "hubs/";
 
-
     @FindBy(xpath = "//a[@class='list-snippet__title-link']")
     protected WebElement topics;
 

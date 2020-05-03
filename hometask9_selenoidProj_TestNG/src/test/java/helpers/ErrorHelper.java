@@ -7,6 +7,7 @@ import org.junit.rules.ErrorCollector;
 
 public class ErrorHelper {
 
+
     @Rule
     public ErrorCollector errorCollector = new ErrorCollector();
 

@@ -136,5 +136,4 @@ public class HabrTest extends BaseHooks {
         errorHelper.checkField(getCurrentUrl(), "https://habr.com/ru/");
         errorHelper.checkField(getTitle(),"Лучшие публикации за сутки");
     }
-
 }

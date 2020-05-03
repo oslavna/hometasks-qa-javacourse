@@ -54,6 +54,7 @@ public class BaseHooks {
         capabilities.setCapability("enableVNC", true);
         capabilities.setCapability("enableVideo", false);
         driver = new RemoteWebDriver(new URL(selenoid), capabilities);
+
 //        WebDriverManager.chromedriver().setup();
 //        driver = new ChromeDriver();
 

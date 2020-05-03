@@ -241,5 +241,4 @@ public class MainPage extends BasePage{
     public void saveLangSettings(){
         getLangSettingsButton().click();
     }
-
 }
